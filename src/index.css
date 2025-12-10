@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #03030a;
+  --bg-secondary: #0a0a14;
+  --primary: #00ffaa;
+  --primary-dim: rgba(0, 255, 170, 0.3);
+  --accent: #ff00aa;
+  --danger: #ff0044;
+  --warning: #ffaa00;
+  --success: #00ff44;
+  --info: #00aaff;
+  --text-primary: #e0e0e0;
+  --text-muted: #555555;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 170, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 170, 0.3);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 170, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Scanline overlay effect */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(255, 0, 170, 0.4);
+}
+
+.glow-danger {
+  box-shadow: 0 0 20px rgba(255, 0, 68, 0.4);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 255, 170, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 170, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Cyber border */
+.cyber-border {
+  border: 1px solid rgba(0, 255, 170, 0.3);
+  position: relative;
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.cyber-border::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+/* Terminal cursor blink */
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Threat level indicators */
+.threat-critical { color: #ff0044; }
+.threat-high { color: #ff4400; }
+.threat-medium { color: #ffaa00; }
+.threat-low { color: #00aaff; }
+.threat-info { color: #555555; }
+
+/* MITRE tactic colors */
+.mitre-recon { background: #1a237e; }
+.mitre-resource { background: #311b92; }
+.mitre-initial { background: #4a148c; }
+.mitre-execution { background: #880e4f; }
+.mitre-persist { background: #b71c1c; }
+.mitre-privesc { background: #d84315; }
+.mitre-defense { background: #f57f17; }
+.mitre-credential { background: #827717; }
+.mitre-discovery { background: #33691e; }
+.mitre-lateral { background: #1b5e20; }
+.mitre-collection { background: #004d40; }
+.mitre-c2 { background: #006064; }
+.mitre-exfil { background: #01579b; }
+.mitre-impact { background: #0d47a1; }
