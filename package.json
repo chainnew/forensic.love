@@ -17,7 +17,7 @@
     "lucide-react": "^0.303.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-force-graph-3d": "^1.24.2",
+    "react-force-graph-3d": "^1.29.0",
     "reactflow": "^11.10.1",
     "tailwind-merge": "^2.2.0",
     "three": "^0.168.0",
