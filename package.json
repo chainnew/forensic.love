@@ -20,7 +20,7 @@
     "react-force-graph-3d": "^1.24.2",
     "reactflow": "^11.10.1",
     "tailwind-merge": "^2.2.0",
-    "three": "^0.168.0",
+    "three": "^0.181.2",
     "y-websocket": "^2.0.4",
     "yjs": "^13.6.20",
     "zustand": "^4.4.7"
